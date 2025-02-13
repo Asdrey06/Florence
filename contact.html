@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accueil - Florence Nandrino</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Header (commun) -->
+    <header>
+      <div class="logo">
+        <img src="logoDef.png" alt="Logo Florence Nandrino" />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="apropos.html">À propos</a></li>
+          <li><a href="consultations.html">Consultations</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html" class="ctaButton">Prendre RDV</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Section Contacts -->
+    <main>
+      <section class="contact-section">
+        <h1>Contact et Informations Pratiques</h1>
+
+        <!-- Formulaire de contact -->
+        <div class="contact-form">
+          <h2>Prendre Rendez-vous</h2>
+          <form action="traitement_formulaire.php" method="post">
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" name="nom" required />
+
+            <label for="email">E-mail :</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="message">Message :</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Envoyer</button>
+          </form>
+        </div>
+
+        <!-- Coordonnées -->
+        <div class="contact-details">
+          <h2>Coordonnées</h2>
+          <p>📞 Téléphone : 06.89.10.92.86</p>
+          <p>
+            📧 E-mail :
+            <a href="mailto:christinelafon66@gmail.com"
+              >christinelafon66@gmail.com</a
+            >
+          </p>
+        </div>
+
+        <!-- Adresse du cabinet -->
+        <div class="cabinet-address">
+          <h2>Adresse du Cabinet</h2>
+          <p>8 avenue Durante, 06000 Nice</p>
+          <p>
+            Le cabinet est situé au 1er étage d'un immeuble sécurisé avec
+            ascenseur, accessible aux personnes à mobilité réduite.
+          </p>
+        </div>
+
+        <!-- Horaires d'ouverture -->
+        <div class="opening-hours">
+          <h2>Horaires d'ouverture</h2>
+          <p>Mardi au Jeudi : 8h00 – 19h00</p>
+        </div>
+
+        <!-- Tarifs des consultations -->
+        <div class="consultation-fees">
+          <h2>Tarifs des Consultations</h2>
+          <ul>
+            <li>Consultation individuelle : 60€</li>
+            <li>Consultation de couple : 75€</li>
+            <li>Consultation familiale : 85€</li>
+            <li>Étudiants (18 à 25 ans) : 45€</li>
+            <li>
+              Participation aux groupes d'échanges : 50€ pour deux heures (par
+              personne)
+            </li>
+          </ul>
+        </div>
+
+        <!-- Informations supplémentaires -->
+        <div class="additional-info">
+          <h2>Informations Pratiques</h2>
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2884.476719291542!2d7.259350476043193!3d43.70064112109994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12cdd0090556f7df%3A0x36f067c8624d9109!2s11%20Av.%20Auber%2C%2006000%20Nice!5e0!3m2!1sfr!2sfr!4v1739470596202!5m2!1sfr!2sfr"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              width="100%"
+              height="100%"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+            >
+            </iframe>
+          </div>
+          <p>Accès en voiture :</p>
+          <ul>
+            <li>Parking Mozart : 11 avenue Auber, 06000 Nice</li>
+            <li>Parking souterrain du centre commercial Nice Étoile</li>
+            <li>Nombreuses places dans les rues alentours</li>
+          </ul>
+          <p>Le cabinet est facilement accessible en tramway et en train.</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer commun -->
+    <footer class="footer">
+      <!-- Colonne gauche : Logo et descriptif -->
+      <div class="footer-column footer-left">
+        <img src="logoDef.png" alt="Logo du Cabinet" class="footer-logo" />
+      </div>
+
+      <!-- Colonne centrale : Mentions légales -->
+      <div class="footer-column footer-center">
+        <h3>Mentions Légales</h3>
+        <ul>
+          <li><a href="#">Mentions légales</a></li>
+          <li><a href="#">Politique de confidentialité</a></li>
+          <li><a href="#">Conditions d'utilisation</a></li>
+        </ul>
+        <p>&copy; 2025 Florence Nandrino. Tous droits réservés.</p>
+      </div>
+
+      <!-- Colonne droite : Contacts -->
+      <div class="footer-column footer-right">
+        <h3>Contact</h3>
+        <p>📧 <a href="mailto:contact@cabinet.fr">contact@cabinet.fr</a></p>
+        <p>📞 +33 1 23 45 67 89</p>
+        <p>📍 123 Rue Exemple,<br />Paris</p>
+      </div>
+    </footer>
+  </body>
+</html>

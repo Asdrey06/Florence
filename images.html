@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <body>
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Accueil - Florence Nandrino</title>
+      <link rel="stylesheet" href="styles.css" />
+    </head>
+    <style>
+      /* 🌟 ABOUT IMAGE GRID */
+      .about-image {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        padding: 40px;
+        width: 100%; /* Étend les colonnes sur toute la largeur */
+        max-width: 100vw; /* S'assure que ça couvre toute la largeur de l'écran */
+      }
+
+      .about-image img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      /* 🌟 RESPONSIVE DESIGN */
+      @media screen and (max-width: 1024px) {
+        .about-image {
+          grid-template-columns: repeat(
+            2,
+            1fr
+          ); /* Passage à 2 colonnes sur tablette */
+        }
+      }
+
+      @media screen and (max-width: 600px) {
+        .about-image {
+          grid-template-columns: 1fr; /* Passage à une colonne sur mobile */
+        }
+      }
+    </style>
+    <div class="about-image">
+      <img src="photoApropos.jpg" alt="Florence Nandrino" />
+      <img src="1.png" alt="Logo du Cabinet" class="footer-logo" />
+      <img src="2.png" alt="Logo du Cabinet" class="footer-logo" />
+      <img src="3.png" alt="Logo du Cabinet" class="footer-logo" />
+      <img src="4.png" alt="Logo du Cabinet" class="footer-logo" />
+      <img src="5.png" alt="Logo du Cabinet" class="footer-logo" />
+      <img src="6.png" alt="Logo du Cabinet" class="footer-logo" />
+      <img src="7.png" alt="Logo du Cabinet" class="footer-logo" />
+      <img src="8.png" alt="Logo du Cabinet" class="footer-logo" />
+      <img src="9.png" alt="Logo du Cabinet" class="footer-logo" />
+      <img src="10.png" alt="Logo du Cabinet" class="footer-logo" />
+      <img src="11.png" alt="Logo du Cabinet" class="footer-logo" />
+      <img src="12.png" alt="Logo du Cabinet" class="footer-logo" />
+      <img src="13.png" alt="Logo du Cabinet" class="footer-logo" />
+      <img src="14.png" alt="Logo du Cabinet" class="footer-logo" />
+      <img src="15.png" alt="Logo du Cabinet" class="footer-logo" />
+      <img src="16.png" alt="Logo du Cabinet" class="footer-logo" />
+      <img src="17.png" alt="Logo du Cabinet" class="footer-logo" />
+      <img src="18.png" alt="Logo du Cabinet" class="footer-logo" />
+      <img src="19.png" alt="Logo du Cabinet" class="footer-logo" />
+      <img src="20.png" alt="Logo du Cabinet" class="footer-logo" />
+      <img src="21.png" alt="Logo du Cabinet" class="footer-logo" />
+      <img src="22.png" alt="Logo du Cabinet" class="footer-logo" />
+      <img src="23.png" alt="Logo du Cabinet" class="footer-logo" />
+      <img
+        src="Logo_mer_montagne.png"
+        alt="Logo du Cabinet"
+        class="footer-logo"
+      />
+      <img
+        src="image_consultation.png"
+        alt="Logo du Cabinet"
+        class="footer-logo"
+      />
+    </div>
+  </body>
+</html>
