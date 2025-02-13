@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Florence Nandrino - Thérapeute</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        background-image: url('fond_ecran_canva.png'); /* Remplace 'background.jpg' par ton image */
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        font-size: 30px; /* Augmenter la taille de la police */
+        font-family: 'Playfair Display', serif; /* Style élégant et raffiné */
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        background-color: #e6f2e6;
+        display: flex;
+        flex-direction: column;
+        color:rgb(36, 61, 61);
+        width: 100%;
+        overflow-x: hidden; /* Empêche les décalages horizontaux */
+      }
+      header {
+        /* background-image: url('header_1920x250.png'); Remplace 'background.jpg' par ton image */
+        background-size: cover;
+        position:relative;
+        font-size: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        bottom: 0;
+        /* margin: 0 0; */
+        padding:20px 40px;
+        /* background-color: #348257; */
+        /* Ajoute une légère transparence */
+        background-color:rgba(52, 130, 87, 0.8); 
+        color: white;
+        height: 250px; /* Hauteur fixe réduite */
+        width: 100vw;
+        max-width: 100%;
+        left: 0; /* Assure qu'il commence bien à gauche */
+        right: 0; /* Assure qu'il s'étend bien à droite */
+        box-sizing: border-box;
+      }
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 40px;
+        padding: 20px, 20px;
+        /* padding: 0;
+        margin: 0; */
+      }
+      nav ul li {
+        /* margin: 0;
+        padding: 20px, 20px; */
+        font-size: 30px;
+        font-weight: bold;
+      }
+      nav a {
+        /* padding: 20px, 20px; */
+        text-decoration: none;
+        color: white;
+        transition: color 0.3s ease-in-out;
+      }
+      nav a:hover {
+        color:rgb(36, 61, 61); /* Ajoute un effet doré au survol */
+      }
+      section {
+        text-align: justify;
+        padding: 50px;
+        font-size: 25px; /* Agrandir le texte des sections */
+      }
+      main {
+        flex: 1; /* Prend l'espace disponible et pousse le footer en bas */
+      }
+      #apropos {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 40px;
+          padding: 50px;
+      }
+      #apropos img {
+          width: 40%;
+          border-radius: 20px;
+      }
+      #apropos div {
+          width: 55%;
+          font-size: 24px;
+          line-height: 1.6;
+      }
+      footer {
+        /* padding: 10px; Réduction de la hauteur du footer */
+        font-size: 25px;
+        width: 100%;
+        position:relative;
+        /* margin: 0 0; */
+        bottom: 0;
+        text-align: center;
+        /* Réduction de la hauteur*/ 
+        /* padding: 10px; */
+        background-color:  #348257;
+        color: white;
+        background-color:rgba(52, 130, 87, 0.8); 
+        /* Hauteur fixe réduite */
+        /* height: 100%; */
+        padding:30px 50px;
+        min-height: 150px; /* Définit une hauteur minimale plus petite */
+        /* display: flex; */
+        justify-content: space-around;
+        /* align-items: flex-start;
+        flex-wrap: wrap; */
+        /* margin-right: 40px;
+        margin-left: 40px; */
+      }
+      /* .footer-section {
+        flex: 1;
+        min-width: 250px;
+        text-align:justify
+      } */
+      /* .footer-section h2 {
+         font-size: 22px;
+         margin-bottom: 10px;
+      } */
+      /* .footer-section ul {
+        list-style: none;
+         padding: 0;
+      } */
+      /* .footer-section ul li {
+        margin-bottom: 8px;
+      } */
+      .footer-section ul li a {
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s ease-in-out;
+      }
+      .footer-section ul li a:hover {
+        color:rgb(36, 61, 61); /* Ajoute un effet doré au survol */
+      }
+      /* Conteneur interne pour mieux structurer */
+      .footer-content {
+        /* display: flex; */
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        font-size: 25px;
+        /* flex-wrap: wrap; */
+        padding: 10px 0; /* Réduit encore l'espace intérieur */
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        max-width: 400px;
+        margin: auto;
+        font-size: 30px;
+      }
+      input,
+      textarea {
+        border-radius: 10px; /* Arrondir les coins des champs du formulaire */
+        padding: 10px;
+        border: 1px solid #ccc;
+        font-size: 25px;
+      }
+      button {
+        border-radius: 10px; /* Arrondir les coins des champs du formulaire */
+        background-color: #3c6c5f;
+        margin: 20px auto;
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 30px;
+      }
+      section h2 {
+        text-align: center !important;
+        display: block;
+        width: 100%;
+      }
+      .ctaButton {
+          background: #ffffff;
+          color: #4a9078;
+          padding: 15px 30px;
+          border-radius: 30px;
+          text-decoration: none;
+          font-weight: bold;
+          transition: all 0.3s ease-in-out;
+        }
+      .ctaButton:hover {
+          color: white;
+          transform: scale(1.1);
+          background:rgb(36, 61, 61);
+        }
+        #contact {
+            text-align: center;
+            /* display: block; */
+            /* width: 100%; */
+            font-size: 30px;
+            /* margin-bottom: 20px;
+            max-width: 100%; */
+        }
+        /* Ajustement de la taille du logo si nécessaire */
+        .logo img {
+            height: 80px; /* Réduction de la hauteur du logo */
+        }
+        #legales{
+            text-align: center; /* Centre le contenu */
+            flex-grow: 1; /* Permet au conteneur de s'étendre */
+            display: flex;
+            font-size: 25px;
+            flex-direction: column;
+            align-items: center; /* Centre horizontalement */
+            justify-content: center; /* Centre verticalement */
+            padding: 5px 0; /* Diminue l'espace vertical */
+        }
+        #legales nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 2px 0;
+            display: flex;
+            flex-direction: column; /* Affichage en colonne */
+            align-items: center; /* Centre les éléments */
+        }
+        #legales nav ul li {
+            margin: 5px 0; /* Espacement entre les éléments */
+        }
+      @media screen and (max-width: 768px) {
+        header {
+            flex-direction: column;
+            text-align: center;
+        }
+        nav ul {
+            flex-direction: column;
+            gap: 10px;
+            padding: 10px 0;
+        }
+        section {
+            padding: 20px;
+            font-size: 18px;
+        }
+        footer {
+            flex-direction: column;
+            padding: 15px;
+            text-align: center;
+        }
+    }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="Florence_logo.png" alt="Logo Florence Nandrino"; style="height: 400px; font-weight: bold;">
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#accueil">Accueil</a></li>
+          <li><a href="#apropos">À propos</a></li>
+          <li><a href="#consultationsettarifs">Consultations et tarifs</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#contact" class="ctaButton">Prendre RDV</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+    <section id="accueil">
+      <h1>Bienvenue sur le site de Florence Nandrino</h1>
+      <p>
+        Bienvenue sur mon site dédié à l'accompagnement et au bien-être.
+        Spécialisée en thérapie de couple et en développement personnel, je vous
+        propose un espace d'écoute, de compréhension et de transformation.
+        La vie de couple est jalonnée de défis et d’évolutions. Grâce à la
+        thérapie de couple, je vous aide à mieux comprendre vos besoins et ceux
+        de votre partenaire afin de restaurer une communication saine et
+        apaisée. Le développement personnel est quant à lui un formidable outil
+        pour retrouver confiance en soi et mieux gérer les difficultés du
+        quotidien. Mon approche vous permet d’explorer vos ressources
+        intérieures et de développer des stratégies pour surmonter les épreuves
+        avec sérénité
+        <h3>Spécialités</h3>
+      <ul>
+        <li>Thérapie de couple</li>
+        <li>Psychanalyse</li>
+        <li>Développement personnel</li>
+        <li>Résilience</li>
+      </ul>
+      </p>
+    </section>
+
+    <section id="apropos">
+      <img src="portrait.jpg" alt="Florence Nandrino">
+      <div>
+        <h2>À propos de moi</h2>
+        <p>
+        Je suis Florence Nandrino, thérapeute passionnée par l’humain et les
+        relations. Forte d’une expérience approfondie dans l’accompagnement des
+        couples et du développement personnel, mon approche se base sur l’écoute
+        active, la bienveillance et des outils concrets pour vous aider à
+        avancer sur votre chemin de vie.
+        </p>
+      </div>
+    </section>
+
+    <section id="consultationsettarifs">
+      <h2>Consultations</h2>
+      <p>
+        Les consultations se font sur rendez-vous en présentiel ou en ligne.
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>Informations</h2>
+      <p>
+        <strong>Adresse du cabinet</strong><br />
+        21 Bd Dubouchage<br />
+        06000 Nice
+      </p>
+      <p>
+        <strong>Téléphone :</strong>
+        <a href="tel:+33761189331">07 61 18 93 31</a>
+      </p>
+      <h3>Horaires</h3>
+      <p>Lundi au Samedi : 08h00 – 20h00</p>
+      <hr />
+      <h2>Contact</h2>
+      <form>
+        <label for="name">Nom :</label>
+        <input type="text" id="name" name="name" placeholder="Votre nom" />
+
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" placeholder="Votre email" />
+
+        <label for="message">Message :</label>
+        <textarea id="message" name="message" placeholder="Votre message"></textarea>
+
+        <button type="submit">Envoyer</button>
+      </form>
+    </section>
+  </main>
+    <footer>
+      
+      <!-- <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">        <div> -->
+            <!-- Pour décaler les contacts vers la droite  -->
+            <div class="logo">
+              <img src="Florence_logo.png" alt="Logo Florence Nandrino"; 
+                style="height: 400px; font-weight: bold">
+            </div>
+              <div class="footer-section">
+                <section id="legales">
+              <!-- style="text-align: center";> -->
+                  <nav>
+                    <ul>
+                      <li><a href="#">Mentions Légales</a></li>
+                      <li><a href="#">Politique de confidentialité</a></li>
+                       <li><a href="#">Contact</a></li>
+                    </ul>
+                  </nav>
+                </section>
+              </div>
+                 <section id="contact">
+                    <h2>Contacts</h2>
+                    <p>
+                    <strong>📍 21 Bd Dubouchage, 06000 Nice</strong>
+                    </p>
+                    <p>
+                      <strong>📞 <a href="tel:+33761189331">07 61 18 93 31</a>
+                      </strong>
+                    </p>
+                    <h2>Horaires</h2>
+                    <p>
+                      <strong>Lundi au Samedi : 08h00 – 20h00</strong>
+                    </p>   
+                    <hr />         
+                  </section>
+                </div>
+          <p>&copy; 2025 Florence Nandrino. Tous droits réservés.
+        <!-- <p style="text-align: center; margin-top: 10px;">&#169; 2024 Florence Nandrino - Tous droits réservés.</p> -->
+          </p>
+      </footer>
+  </body>
+</html>
