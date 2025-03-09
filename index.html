@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Accueil - Florence Nandrino</title>
     <link rel="stylesheet" href="styles.css" />
+    <!-- Exemple avec Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
   <body>
     <!-- Header (commun) -->
@@ -29,7 +34,7 @@
     <!-- Section Hero -->
     <section class="hero">
       <img src="13.png" alt="Thérapie de couple" class="hero-image" />
-      <div class="hero-text">
+      <div class="hero-text slide-down">
         <h1>Retrouvez l’équilibre et la sérénité dans votre couple</h1>
         <p>Renforcez vos liens et retrouvez l'harmonie</p>
         <a href="contact.html" class="ctaButton">Prendre RDV</a>
@@ -37,7 +42,7 @@
     </section>
 
     <!-- Section Présentation -->
-    <section class="presentation">
+    <section class="presentation slide-top">
       <h2>Un espace de bienveillance et de renouveau</h2>
       <p>
         Je vous propose un espace d'écoute authentique où votre souffrance et
@@ -54,10 +59,10 @@
 
     <!-- Section Présentation avec Image et Texte -->
     <section class="presentation-boxed">
-      <div class="presentation-img">
+      <div class="presentation-img slide-left">
         <img src="photoApropos.jpg" alt="Séance de thérapie" />
       </div>
-      <div class="presentation-text">
+      <div class="presentation-text slide-right">
         <h2>Redécouvrez l’harmonie au sein de votre couple</h2>
         <p>
           Mon rôle est de vous accompagner dans la découverte et la
@@ -105,19 +110,26 @@
       <!-- Colonne gauche : Logo et descriptif -->
       <div class="footer-column footer-left">
         <img src="logoDef.png" alt="Logo du Cabinet" class="footer-logo" />
+        <p>
+          Florence Nandrino, thérapeute spécialisée en thérapie de couple et en
+          accompagnement personnalisé.
+        </p>
       </div>
 
-      <!-- Colonne centrale : Mentions légales -->
+      <!-- Colonne centrale : Navigation -->
       <div class="footer-column footer-center">
+        <h3>Navigation</h3>
         <ul>
-          <li><a href="#">Mentions légales</a></li>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="apropos.html">À propos</a></li>
+          <li><a href="consultations.html">Consultations</a></li>
+          <li><a href="contact.html">Informations pratiques</a></li>
         </ul>
-        <p>&copy; 2025 Florence Nandrino. Tous droits réservés.</p>
       </div>
 
       <!-- Colonne droite : Contacts -->
       <div class="footer-column footer-right">
-        <h3>Contact</h3>
+        <h3>Contacts</h3>
         <p>
           📧
           <a href="mailto:florence.nandrino@ccas-nice.fr"
@@ -125,9 +137,10 @@
           >
         </p>
         <p>📞 06 61 19 82 11</p>
-        <p>📍8 avenue Durante, 06000,<br />Nice</p>
+        <p>📍 8 avenue Durante, 06000, Nice</p>
       </div>
     </footer>
+
     <!-- Inclure le script JavaScript externe -->
     <script src="script.js" defer></script>
   </body>

@@ -44,7 +44,6 @@ if (sections.length > 0) {
       threshold: 0.2, // Déclenche lorsque 10% de la section est visible
     }
   );
-
   sections.forEach((section) => {
     section.style.opacity = 0; // Initialise avec opacité 0
     observer.observe(section);
@@ -54,3 +53,65 @@ if (sections.length > 0) {
     "Erreur : aucune section avec la classe 'consultations-container' n'a été trouvée."
   );
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const elementsToAnimate = document.querySelectorAll(
+    ".slide-left, .slide-right"
+  );
+
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target); // Déclenche une seule fois
+        }
+      });
+    },
+    {
+      threshold: 0.1,
+    }
+  );
+
+  elementsToAnimate.forEach((el) => {
+    observer.observe(el);
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const elementsToAnimate = document.querySelectorAll(
+    ".slide-top, .slide-left, .slide-right"
+  );
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target); // L'animation se déclenche une seule fois
+        }
+      });
+    },
+    {
+      threshold: 0.1,
+    }
+  );
+
+  elementsToAnimate.forEach((el) => {
+    observer.observe(el);
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const slideElements = document.querySelectorAll(".slide-down");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  });
+
+  slideElements.forEach((el) => observer.observe(el));
+});

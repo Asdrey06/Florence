@@ -20,8 +20,11 @@ body {
 
 /* Header */
 header {
-  width: auto;
-  background-color: rgba(84, 156, 117, 0.6);
+  width: 100%;
+  left: 0; /* Assure qu'il démarre bien à gauche */
+  right: 0; /* S'étend jusqu'à droite */
+  box-sizing: border-box; /* Prend en compte le padding dans la largeur totale */
+  background-color: rgba(84, 156, 117, 0.95);
   color: white;
   display: flex;
   justify-content: space-between;
@@ -30,10 +33,10 @@ header {
   /* position: fixed;  */
   padding: 10px 40px 10px; /* Réduction du padding */
   height: 150px; /* Réduction de la hauteur */
-  position: sticky;
+  position: fixed;
   top: 0; /* Reste collé en haut de la page */
   /* Assure qu'il est au-dessus du reste */
-  z-index: 1000;
+  z-index: 2000;
   border-top: 5px solid #a7dabe; /* Bordure fine et élégante */
   border-bottom: 5px solid #a7dabe; /* Bordure fine et élégante */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajoute une ombre discrète */
@@ -42,11 +45,6 @@ header {
 /* Ajustement du logo header */
 .logo img {
   height: 200px; /* Réduction du logo */
-}
-
-/* Ajustement du logo footer*/
-.logo2 img {
-  height: 300px;
 }
 
 /* NAVIGATION */
@@ -69,7 +67,7 @@ nav a {
 }
 
 nav a:hover {
-  color: rgb(36, 61, 61);
+  background: #31745a;
 }
 
 /* Bouton "Prendre RDV" */
@@ -80,13 +78,13 @@ nav a:hover {
   padding: 12px 25px;
   border-radius: 30px;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 25px;
   font-weight: bold;
   transition: all 0.3s ease-in-out;
 }
 
 .ctaButton:hover {
-  background: #3a523c;
+  background: #31745a;
   color: white;
   transform: scale(1.1);
 }
@@ -161,9 +159,6 @@ nav a:hover {
   width: 100%;
   background-size: cover;
   background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   overflow: hidden; /* Empêche le débordement de l'image */
   text-align: center;
   color: white;
@@ -171,9 +166,13 @@ nav a:hover {
   min-height: 80vh; /* Garantit une hauteur suffisante */
   z-index: 1;
   margin-bottom: 0; /* Assure que la vague n'est pas cachée */
+  display: flex;
+  height: 100vh; /* Occupe toute la hauteur de la vue */
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement */
 }
 
-.hero-content {
+/* .hero-content {
   width: 80%;
   max-width: 800px;
   padding: 20px;
@@ -188,10 +187,10 @@ nav a:hover {
   justify-content: center;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2; /* Au-dessus de l'image */
-  backdrop-filter: brightness(0.7); /* Assombrit l'image derrière */
-}
+  transform: translate(-50%, -50%); */
+/* z-index: 2; */
+/* backdrop-filter: brightness(0.7); 
+} */
 
 /* Ajustement des marges et de la taille de l'image */
 .hero img.hero-image {
@@ -207,14 +206,29 @@ nav a:hover {
 /* Texte en superposition */
 .hero-text {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+
   color: white;
   text-align: center;
   padding: 20px;
   z-index: 2;
   width: 80%;
+  max-width: 80%; /* Limite la largeur maximale du texte */
+  box-sizing: border-box;
+}
+
+/* Animation de glissement vers le bas */
+.slide-down {
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  text-align: center;
+  align-items: center;
+}
+
+.slide-down.visible {
+  opacity: 1;
+  transform: translateY(0);
+  text-align: center;
 }
 
 .hero-text h1,
@@ -351,7 +365,18 @@ nav a:hover {
   display: flex;
   flex-direction: column;
   font-size: 20px;
-  /* border-top: 5px solid #a7dabe; */
+}
+
+/* Effet de glissement du haut vers le bas */
+.slide-top {
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.slide-top.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .presentation h2 {
@@ -390,6 +415,18 @@ nav a:hover {
   max-width: 400px; /* Taille maximale */
 }
 
+/* Effet de glissement de la gauche vers le centre */
+.slide-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.slide-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 .presentation-img img {
   width: 100%;
   height: 500px; /* Réduit la hauteur */
@@ -403,6 +440,18 @@ nav a:hover {
   font-size: 20px;
   text-align: justify; /* Justifier le texte */
   margin-top: -30px; /* Ajustez cette valeur pour remonter le texte */
+}
+
+/* Effet de glissement de la droite vers le centre */
+.slide-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.slide-right.visible {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .presentation-text h2 {
@@ -463,7 +512,7 @@ nav a:hover {
 
 .service-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.5);
 }
 
 .service-card h3 {
@@ -490,77 +539,71 @@ nav a:hover {
 }
 
 /* 🌟 FOOTER (Fond vert foncé avec texture douce) */
+
+.footer-column {
+  flex: 1;
+  /* padding: 20px; */
+  box-sizing: border-box;
+}
+
 footer {
-  background-color: rgba(52, 130, 87, 0.6);
-  /* background: linear-gradient(to right, #7ebc9f, #539180); */
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch; /* Assure que toutes les colonnes ont la même hauteur */
+  /* padding: 20px 10%; */
+  background-color: rgba(84, 156, 117, 0.9);
   color: white;
-  padding: 0;
-  border-top: 5px solid #a7dabe; /* Bordure fine et élégante */
-  padding-top: 0;
-  text-align: center;
+  flex-wrap: wrap; /* Permet aux colonnes de s'ajuster automatiquement */
+  /* background-color: rgba(84, 156, 117, 0.95); */
+  /* background: linear-gradient(to right, #7ebc9f, #539180); */
+  /* color: white; */
+  /* padding: 0; */
+  /* border-top: 5px solid #a7dabe; */
+  /* padding-top: 0; */
+  /* text-align: center;
   position: relative;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  padding: 40px 20px;
+  margin-top: 50px; */
 }
-/* Colonnes égales */
-.footer-column {
+
+.footer-left {
+  /* max-width: 300px; Limite la taille pour éviter qu'elle ne prenne trop de place */
   flex: 1;
-  min-width: 300px;
-  margin: 0;
+  text-align: center;
+  padding-left: 20px;
 }
 
-/* Logo stylisé */
-.footer-logo {
-  max-width: 500px;
-  display: block;
-  margin: 0 auto 20px auto;
+.footer-center,
+.footer-right {
+  flex: 1;
+  text-align: center;
+  padding-top: 40px;
 }
 
-/* Titres et alignement */
 .footer h3 {
-  margin-bottom: 25px;
-  font-size: 25px;
+  font-size: 1.5em;
+  margin-bottom: 15px;
 }
 
-/* Listes stylisées */
-.footer ul {
-  list-style: none;
-  padding: 0;
-  font-size: 20px;
-  margin-top: 100px;
+.footer-logo img {
+  width: 150px; /* Augmente la taille du logo */
+  height: auto;
+  margin-bottom: 0px;
 }
 
-.footer ul li {
-  margin-bottom: 10px;
-  font-size: 20px;
-}
-
-footer:before {
-  content: "";
-  position: absolute;
-  top: -50px;
-  left: 0;
-  width: 100%;
-  height: 50px;
-  clip-path: ellipse(50% 100% at 50% 100%);
-}
-
-/* Liens */
+.footer p,
 .footer a {
-  color: #ffffff;
-  font-weight: bold;
-  /* text-decoration: line-through; */
+  font-size: 1em;
+  line-height: 1.5;
+  color: white;
+  text-decoration: none;
 }
 
 .footer a:hover {
   text-decoration: underline;
-}
-
-/* Espacement entre colonnes */
-.footer-left,
-.footer-right {
-  padding-top: 0px;
 }
 
 /* 🌟 RESPONSIVE DESIGN */
@@ -604,19 +647,43 @@ footer:before {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 80px 10%;
+  padding: 130px 10% 50px;
   background: rgba(255, 255, 255, 0.8); /* Fond léger pour lisibilité */
-  border-radius: 10px;
+  border-radius: 15px;
 }
 
 /* Conteneur en 2 colonnes */
 .about-container {
   display: flex;
   align-items: center;
-  gap: 50px;
+  gap: 60px;
   max-width: 1200px;
   width: 100%;
   font-size: 25px;
+
+  /* Animation de glissement depuis la gauche */
+  .slide-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .slide-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Animation de glissement depuis la droite */
+  .slide-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .slide-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* Colonne Texte */
@@ -629,6 +696,7 @@ footer:before {
 .about-image {
   width: 100%;
   max-width: 450px;
+  padding-top: 10px;
 }
 
 .about-image img {
@@ -636,26 +704,7 @@ footer:before {
   height: auto;
   border-radius: 15px;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* Bouton */
-.ctaButton {
-  display: inline-block;
-  background: #60a38d;
-  color: white;
-  /* padding: 12px 25px; */
-  /* margin-top: 20px; */
-
-  border-radius: 30px;
-  text-decoration: none;
-  font-size: 25px;
-  font-weight: bold;
-  transition: all 0.3s ease-in-out;
-}
-
-.ctaButton:hover {
-  background: #3a523c;
-  transform: scale(1.05);
+  margin-top: 20px;
 }
 
 /* 🌟 Responsive (Mobile) */
@@ -687,7 +736,7 @@ main {
   justify-content: center; /* Centrer le contenu si nécessaire */
   max-width: 1200px;
   margin: auto;
-  padding: 60px 10%;
+  padding: 60px 10% 60px;
 }
 
 /* 🌟 RESPONSIVE DESIGN */
@@ -844,11 +893,12 @@ body {
 /* 🌟 CONTACT PAGE STYLES */
 .contact-section {
   /* background: rgba(255, 255, 255, 0.8); */
-  padding: 50px;
+  /* padding: 50px; */
   border-radius: 15px;
   box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.3);
   text-align: center;
-  padding-top: 20px; /* Réduit l'espace en haut de la section */
+  padding-top: 50px;
+  margin-top: 150px; /* Ajoute un espace au-dessus de la section */
 }
 
 h1,
@@ -932,7 +982,7 @@ p {
 }
 
 .contact-form button:hover {
-  background: #3a523c;
+  background: #31745a;
   transform: scale(1.05);
 }
 
