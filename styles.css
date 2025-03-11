@@ -21,38 +21,36 @@ body {
 /* Header */
 header {
   width: 100%;
-  left: 0; /* Assure qu'il démarre bien à gauche */
-  right: 0; /* S'étend jusqu'à droite */
-  box-sizing: border-box; /* Prend en compte le padding dans la largeur totale */
+  box-sizing: border-box;
   background-color: rgba(84, 156, 117, 0.95);
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* Reste en haut */
-  /* position: fixed;  */
-  padding: 10px 40px 10px; /* Réduction du padding */
+  padding: 10px 40px; /* Réduction du padding */
   height: 150px; /* Réduction de la hauteur */
   position: fixed;
   top: 0; /* Reste collé en haut de la page */
   /* Assure qu'il est au-dessus du reste */
   z-index: 2000;
-  border-top: 5px solid #a7dabe; /* Bordure fine et élégante */
   border-bottom: 5px solid #a7dabe; /* Bordure fine et élégante */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajoute une ombre discrète */
 }
 
-/* Ajustement du logo header */
+/* Ajustement du logo */
 .logo img {
-  height: 200px; /* Réduction du logo */
+  height: 150px;
+  max-width: 180px;
+  display: block;
 }
 
-/* NAVIGATION */
+/* 🌟 NAVIGATION */
 nav ul {
   list-style: none;
   display: flex;
   gap: 30px;
   align-items: center;
+  padding: 0;
 }
 
 nav ul li {
@@ -85,21 +83,19 @@ nav a:hover {
 
 .ctaButton:hover {
   background: #31745a;
-  color: white;
   transform: scale(1.1);
 }
 
-/* 🌟 RESPONSIVE DESIGN */
-@media screen and (max-width: 1024px) {
+* 🌟 RESPONSIVE NAVIGATION */ @media screen and (max-width: 1024px) {
   header {
     flex-direction: column;
-    align-items: center;
     text-align: center;
-    padding: 10px 20px;
+    padding: 15px 20px;
+    height: auto;
   }
 
   .logo img {
-    height: 80px; /* Réduction du logo */
+    height: 70px;
   }
 
   nav ul {
@@ -107,20 +103,16 @@ nav a:hover {
     gap: 15px;
   }
 
-  nav ul li {
-    font-size: 20px;
-  }
-
   .ctaButton {
-    margin-top: 10px;
-    font-size: 16px;
+    font-size: 18px;
+    padding: 10px 20px;
   }
 }
 
-/* 🌟 MENU BURGER POUR PETITS ÉCRANS */
+/* 🌟 MENU BURGER */
 @media screen and (max-width: 768px) {
   nav {
-    display: none; /* Cache le menu par défaut */
+    display: none;
     flex-direction: column;
     width: 100%;
     background: rgba(84, 156, 117, 0.9);
@@ -129,11 +121,6 @@ nav a:hover {
     left: 0;
     text-align: center;
     z-index: 1000;
-  }
-
-  nav ul {
-    flex-direction: column;
-    padding: 20px 0;
   }
 
   .menu-toggle {
@@ -152,45 +139,18 @@ nav a:hover {
 
 /* 🌟 HERO SECTION (Bannière) */
 .hero {
-  /* border-top: 5px solid #a7dabe;  */
-  /* background-image: url("fond_ecran_canva.png"); */
-  /* background: rgba(255, 255, 255, 0.6); Fond blanc semi-transparent */
   position: relative;
   width: 100%;
   background-size: cover;
   background-position: center;
-  overflow: hidden; /* Empêche le débordement de l'image */
+  overflow: hidden;
   text-align: center;
-  color: white;
-  /* font-size: 25px; */
   min-height: 80vh; /* Garantit une hauteur suffisante */
-  z-index: 1;
-  margin-bottom: 0; /* Assure que la vague n'est pas cachée */
   display: flex;
-  height: 100vh; /* Occupe toute la hauteur de la vue */
+  height: 100vh;
   justify-content: center; /* Centre horizontalement */
   align-items: center; /* Centre verticalement */
 }
-
-/* .hero-content {
-  width: 80%;
-  max-width: 800px;
-  padding: 20px;
-  border-radius: 20px;
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
-  font-size: 25px;
-  position: relative;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
-/* z-index: 2; */
-/* backdrop-filter: brightness(0.7); 
-} */
 
 /* Ajustement des marges et de la taille de l'image */
 .hero img.hero-image {
@@ -206,21 +166,31 @@ nav a:hover {
 /* Texte en superposition */
 .hero-text {
   position: absolute;
-
   color: white;
   text-align: center;
   padding: 20px;
   z-index: 2;
   width: 80%;
   max-width: 80%; /* Limite la largeur maximale du texte */
-  box-sizing: border-box;
+}
+
+.hero h1 {
+  font-size: 35px;
+  color: #e5fff8;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.hero p {
+  font-size: 22px;
+  color: #e5fff8;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 /* Animation de glissement vers le bas */
 .slide-down {
   opacity: 0;
   transform: translateY(-50px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition: opacity 1s ease, transform 1s ease;
   text-align: center;
   align-items: center;
 }
@@ -231,19 +201,6 @@ nav a:hover {
   text-align: center;
 }
 
-.hero-text h1,
-.hero-text p {
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Ombre autour du texte */
-}
-
-.hero h1 {
-  font-size: 35px;
-  color: #e5fff8;
-}
-.hero p {
-  font-size: 25px;
-  color: #e5fff8;
-}
 /* 📱 Petits écrans (Smartphones) */
 @media screen and (max-width: 600px) {
   /* Réduction de la taille du texte */
@@ -365,6 +322,7 @@ nav a:hover {
   display: flex;
   flex-direction: column;
   font-size: 20px;
+  color: #3c6c5f;
 }
 
 /* Effet de glissement du haut vers le bas */
@@ -403,11 +361,6 @@ nav a:hover {
   justify-content: center;
   gap: 50px;
   padding: 80px 10% 80px;
-  /* background: linear-gradient(135deg, #eaf7ea, #d6eedd); */
-  /* Effet gradient doux */
-  /* background: rgba(255, 255, 255, 0.6);  */
-  /* box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.05); */
-  /* border-top: 5px solid #a7dabe;  */
 }
 
 .presentation-img {
@@ -419,7 +372,7 @@ nav a:hover {
 .slide-left {
   opacity: 0;
   transform: translateX(-50px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: opacity 1s ease, transform 1s ease;
 }
 
 .slide-left.visible {
@@ -440,13 +393,14 @@ nav a:hover {
   font-size: 20px;
   text-align: justify; /* Justifier le texte */
   margin-top: -30px; /* Ajustez cette valeur pour remonter le texte */
+  color: #3c6c5f;
 }
 
 /* Effet de glissement de la droite vers le centre */
 .slide-right {
   opacity: 0;
   transform: translateX(50px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: opacity 1s ease, transform 1s ease;
 }
 
 .slide-right.visible {
@@ -464,39 +418,23 @@ nav a:hover {
 .presentation-text p {
   font-size: 20px;
   line-height: 1.6;
-  color: #333;
+  color: #3c6c5f;
   margin-bottom: 15px;
 }
 
 /* 🌟 SERVICES (Fond coloré avec séparateur courbé) */
 .services {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   padding: 20px 0% 80px;
-  gap: 30px;
+  gap: 60px;
   position: relative;
-  font-size: 25px;
-  /* background: rgba(255, 255, 255, 0.6); */
+  font-size: 20px;
   background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
   border-radius: 15px;
   margin-left: 30px;
   margin-right: 30px;
-  /* box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1); */
-}
-
-.services::before {
-  content: "";
-  position: absolute;
-  top: -50px;
-  left: 0;
-  width: 100%;
-  height: 50px;
-  clip-path: ellipse(50% 100% at 50% 100%);
-  /* background: rgba(255, 255, 255, 0.6); */
-  /* background: linear-gradient(135deg, #eaf7ea, #49c16d); */
-  /* background-color: rgba(52, 130, 87, 0.7); */
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
 }
 
 .service-card {
@@ -504,10 +442,17 @@ nav a:hover {
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
-  width: calc(33.333% - 20px); /* Pour 3 cartes par ligne */
   text-align: center;
-  color: #333;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.service-card a {
+  text-decoration: none; /* supprime le soulignement*/
+  color: #3c6c5f;
+  display: block;
+  height: 100%;
+  width: 100%;
 }
 
 .service-card:hover {
@@ -515,14 +460,9 @@ nav a:hover {
   box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.5);
 }
 
-.service-card h3 {
-  font-size: 25px;
-  color: #3c6c5f;
-}
-
-.service-card p {
-  font-size: 20px;
-  color: #333;
+.service-card a h3,
+.service-card a p {
+  text-decoration: none; /* Assure que le texte ne soit pas souligné */
 }
 
 /* 🌟 RESPONSIVE DESIGN */
@@ -550,27 +490,16 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: stretch; /* Assure que toutes les colonnes ont la même hauteur */
-  /* padding: 20px 10%; */
   background-color: rgba(84, 156, 117, 0.9);
   color: white;
   flex-wrap: wrap; /* Permet aux colonnes de s'ajuster automatiquement */
-  /* background-color: rgba(84, 156, 117, 0.95); */
-  /* background: linear-gradient(to right, #7ebc9f, #539180); */
-  /* color: white; */
-  /* padding: 0; */
-  /* border-top: 5px solid #a7dabe; */
-  /* padding-top: 0; */
-  /* text-align: center;
   position: relative;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
   padding: 40px 20px;
-  margin-top: 50px; */
+  margin-top: 50px;
+  border-top: 5px solid #a7dabe; /* Bordure fine et élégante */
 }
 
 .footer-left {
-  /* max-width: 300px; Limite la taille pour éviter qu'elle ne prenne trop de place */
   flex: 1;
   text-align: center;
   padding-left: 20px;
@@ -583,6 +512,11 @@ footer {
   padding-top: 40px;
 }
 
+.footer-center ul {
+  list-style: none; /* ✅ Supprime les puces */
+  padding-left: 0; /* ✅ Supprime l'indentation de la liste */
+}
+
 .footer h3 {
   font-size: 1.5em;
   margin-bottom: 15px;
@@ -591,7 +525,6 @@ footer {
 .footer-logo img {
   width: 150px; /* Augmente la taille du logo */
   height: auto;
-  margin-bottom: 0px;
 }
 
 .footer p,
@@ -600,6 +533,7 @@ footer {
   line-height: 1.5;
   color: white;
   text-decoration: none;
+  margin-top: -14px;
 }
 
 .footer a:hover {
@@ -659,7 +593,7 @@ footer {
   gap: 60px;
   max-width: 1200px;
   width: 100%;
-  font-size: 25px;
+  font-size: 20px;
 
   /* Animation de glissement depuis la gauche */
   .slide-left {
@@ -690,6 +624,11 @@ footer {
 .about-text {
   width: 55%;
   text-align: justify;
+  color: #3c6c5f;
+}
+
+.about-h2 {
+  margin-top: 0;
 }
 
 /* Colonne Image */
@@ -704,7 +643,9 @@ footer {
   height: auto;
   border-radius: 15px;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-  margin-top: 20px;
+  margin-top: 50px;
+  max-height: 600px; /* ✅ Ajustez selon vos besoins */
+  object-fit: cover; /* ✅ Empêche la déformation */
 }
 
 /* 🌟 Responsive (Mobile) */
@@ -755,14 +696,14 @@ main {
   gap: 50px; /* Espacement entre les colonnes */
   padding: 60px 10%;
   max-width: 1200px;
-  margin: 40px auto; /* Centrer avec une marge supérieure */
+  margin: 60px auto 40px; /* Centrer avec une marge supérieure */
   /* background: transparent; Supprime le fond blanc */
   background: rgba(255, 255, 255, 0.6);
   border-radius: 20px;
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
   align-items: stretch; /* Assure que l'image et le texte occupent toute la hauteur disponible */
   opacity: 0; /* Commence invisible */
-  animation-duration: 1s;
+  animation-duration: 2s;
   animation-fill-mode: forwards; /* Garde l'état final de l'animation */
   animation-timing-function: ease-out;
 }
@@ -776,6 +717,14 @@ main {
   display: flex;
   flex-direction: column;
   /* gap: 30px; */
+}
+
+.tarif-title {
+  margin-bottom: 5px; /* ✅ Réduit l’espace sous le titre */
+}
+
+.tarif-list {
+  margin-top: 0; /* ✅ Supprime l’espace au-dessus de la liste */
 }
 
 /* Colonne Image */
@@ -890,15 +839,23 @@ body {
   padding: 0;
 }
 
-/* 🌟 CONTACT PAGE STYLES */
-.contact-section {
-  /* background: rgba(255, 255, 255, 0.8); */
-  /* padding: 50px; */
-  border-radius: 15px;
-  box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.3);
+/* 🌟 Structure générale */
+.contact-page {
+  max-width: 900px;
+  margin: 40px auto 20px;
+  /* padding: 40px; */
   text-align: center;
-  padding-top: 50px;
-  margin-top: 150px; /* Ajoute un espace au-dessus de la section */
+  font-family: "Georgia", serif;
+  color: #444;
+  padding-top: 120px; /* ✅ Ajuste l'espacement sous le header */
+}
+
+/* 🏷️ Titre principal */
+.contact-title {
+  font-size: 32px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: #3c6c5f;
 }
 
 h1,
@@ -908,13 +865,141 @@ h2 {
   text-align: center;
 }
 
-p {
-  font-size: 18px;
-  line-height: 1.6;
+.contact-subtext {
+  font-size: 20px;
+  margin-bottom: 60px;
+  color: #3c6c5f;
 }
 
-/* 🌟 FORMULAIRE DE CONTACT */
+/* 📌 Section principale */
+.contact-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px; /* ✅ Ajoute un espace entre les blocs */
+}
+
+/* 📞 Infos contact */
+.contact-info {
+  flex: 1;
+  text-align: left;
+  min-width: 300px;
+}
+
+.info-block {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  color: #3c6c5f;
+}
+
+.info-block h2 {
+  font-size: 20px;
+  color: #3c6c5f;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* 🏠 Conteneur principal du formulaire */
 .contact-form {
+  background: #f9f9f9;
+  padding: 20px 45px 0 20px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  max-width: 450px; /* ✅ Empêche que le formulaire devienne trop large */
+  margin: 0 auto;
+}
+
+/* 🎯 Ajustement du placement */
+.contact-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: nowrap; /* ❌ Empêche le passage en ligne suivante */
+  max-width: 1000px;
+  margin: 0 auto; /* ✅ Centre la section */
+}
+
+/* 📞 Colonne de gauche : Infos */
+.contact-info {
+  flex: 1;
+  min-width: 300px;
+  font-size: 18px;
+}
+
+/* ✅ Ajout d'une marge à droite pour équilibrer */
+.contact-form {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* 📩 Espacement des champs */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+/* ✅ Ajouter une marge en bas pour bien espacer les inputs */
+input:not(:last-child),
+textarea {
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+/* ✅ Bouton ajusté */
+.contact-form button {
+  font-size: 18px;
+  background-color: #3c6c5f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 30px;
+  display: block; /* ✅ Permet d'utiliser margin auto */
+  margin: 0 auto;
+}
+
+.contact-form button:hover {
+  background-color: #2a4d3f;
+}
+
+/* 📍 Google Maps */
+.map-section {
+  margin-top: 80px;
+  color: #3c6c5f;
+}
+
+.map-container {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* 🌟 CONTACT PAGE STYLES */
+/* .contact-section { */
+/* background: rgba(255, 255, 255, 0.8); */
+/* padding: 50px; */
+/* border-radius: 15px;
+  box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  padding-top: 50px; */
+/* margin-top: 150px;
+} */
+
+/* p {
+  font-size: 18px;
+  line-height: 1.6;
+} */
+
+/* 🌟 FORMULAIRE DE CONTACT */
+/* .contact-form {
   background: rgb(156, 206, 174, 0.32);
   padding: 30px;
   border-radius: 15px;
@@ -924,46 +1009,53 @@ p {
   display: flex;
   flex-direction: column;
   text-align: start;
-  align-items: stretch; /* Assure que tous les éléments remplissent la largeur */
-  /* Pour centrer horizontalement */
-  margin-left: auto;
-  margin-right: auto;
-  /* box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1); */
-}
+  align-items: stretch;  */
+/* Pour centrer horizontalement */
+/* margin-left: auto;
+  margin-right: auto; */
+/* box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1); */
+/* } */
 
-.section-shadow {
-  width: 90%; /* Taille normale avant survol */
-  max-width: 2000px; /* Largeur maximale standard */
-  /* transition: all 0.3s ease; */
-  border-radius: 15px;
-  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.15);
-  margin: auto; /* Centre la section horizontalement */
-}
+/* .section-shadow { */
+/* Taille normale avant survol */
+/* width: 90%;  */
+/* Largeur maximale standard */
+/* max-width: 2000px;  */
+/* transition: all 0.3s ease; */
+/* border-radius: 15px;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.15); */
+/* Centre la section horizontalement */
+/* margin: auto;  */
+/* } */
 
-.section-shadow:hover {
-  width: 100%;
-  max-width: 4000px; /* Assure une largeur maximale élargie */
+/* .section-shadow:hover { */
+/* width: 100%; */
+/* Assure une largeur maximale élargie */
+/* max-width: 4000px;
   box-shadow: 0px 15px 45px rgba(0, 0, 0, 0.3);
   transform: translateY(-5px);
   display: flex;
   flex-direction: column;
-  border-radius: 15px;
-  align-items: center; /* Centre les éléments horizontalement */
-  justify-content: center; /* Centre les éléments verticalement */
-  /* text-align: center; Assure que le texte est centré */
-}
+  border-radius: 15px; */
+/* Centre les éléments horizontalement */
+/* align-items: center;  */
+/* Centre les éléments verticalement */
+/* justify-content: center;  */
+/* text-align: center; Assure que le texte est centré */
+/* } */
 
-.contact-form input,
+/* .contact-form input,
 .contact-form textarea {
   width: calc(100% - 40px);
   padding: 25px;
   margin: 10px 20px;
   border-radius: 5px;
-  border: 1px solid #ccc;
-  box-sizing: border-box; /* Pour inclure le padding dans la largeur totale */
-}
+  border: 1px solid #ccc; */
+/* Pour inclure le padding dans la largeur totale */
+/* box-sizing: border-box; 
+} */
 
-.form-label {
+/* .form-label {
   padding: 10px;
   padding-top: 10px;
 }
@@ -973,29 +1065,29 @@ p {
   color: white;
   padding: 12px 25px;
   border-radius: 30px;
-  border: none;
-  /* margin-top: 20px; */
-  font-size: 18px;
+  border: none; */
+/* margin-top: 20px; */
+/* font-size: 18px;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-}
+} */
 
-.contact-form button:hover {
+/* .contact-form button:hover {
   background: #31745a;
   transform: scale(1.05);
-}
+} */
 
 /* 🌟 CONTACT INFO STYLES */
-.contact-details,
+/* .contact-details,
 .cabinet-address,
 .opening-hours,
 .consultation-fees,
-.additional-info {
-  /* background: rgba(255, 255, 255, 0.9); */
-  padding: 20px;
-  /* text-align: center; */
-  width: 75%;
+.additional-info { */
+/* background: rgba(255, 255, 255, 0.9); */
+/* padding: 20px; */
+/* text-align: center; */
+/* width: 75%;
   display: flex;
   flex-direction: column;
   margin-left: auto;
@@ -1003,19 +1095,19 @@ p {
   border-radius: 15px;
   margin-bottom: 20px;
   background: rgb(156, 206, 174, 0.32);
-}
+} */
 
-ul {
+/* ul {
   list-style-type: none;
   padding: 0;
-}
+} */
 
-ul li {
+/* ul li {
   margin: 5px 0;
-}
+} */
 
 /* 🌟 GOOGLE MAP */
-.map-container {
+/* .map-container {
   width: 90%;
   height: 400px;
   border-radius: 15px;
@@ -1024,14 +1116,14 @@ ul li {
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
-.map-container iframe {
+/* .map-container iframe {
   width: 100%;
   height: 100%;
   border-radius: 15px;
   border: none;
-}
+} */
 
 /* Masquer le bouton burger sur écran large */
 .menu-toggle {
