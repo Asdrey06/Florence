@@ -5,7 +5,7 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  font-size: 20px;
+  font-size: 18px;
   font-family: "Playfair Display", serif;
   margin: 0;
   padding: 0;
@@ -44,17 +44,28 @@ header {
   display: block;
 }
 
+/* Menu burger pour mobile */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
 /* 🌟 NAVIGATION */
 nav ul {
   list-style: none;
   display: flex;
-  gap: 30px;
+  gap: 20px;
   align-items: center;
   padding: 0;
+  margin: 0;
 }
 
 nav ul li {
-  font-size: 25px;
+  font-size: 18px;
   font-weight: bold;
 }
 
@@ -70,14 +81,17 @@ nav a:hover {
 
 /* Bouton "Prendre RDV" */
 .ctaButton {
+  font-size: 20px;
   display: inline-block;
   background: #69a484;
   color: white;
   padding: 12px 25px;
   border-radius: 30px;
   text-decoration: none;
-  font-size: 25px;
   font-weight: bold;
+  text-align: center;
+  margin: 20px auto;
+  width: fit-content;
   transition: all 0.3s ease-in-out;
 }
 
@@ -86,31 +100,11 @@ nav a:hover {
   transform: scale(1.1);
 }
 
-* 🌟 RESPONSIVE NAVIGATION */ @media screen and (max-width: 1024px) {
-  header {
-    flex-direction: column;
-    text-align: center;
-    padding: 15px 20px;
-    height: auto;
-  }
-
-  .logo img {
-    height: 70px;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .ctaButton {
-    font-size: 18px;
-    padding: 10px 20px;
-  }
-}
-
-/* 🌟 MENU BURGER */
 @media screen and (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
   nav {
     display: none;
     flex-direction: column;
@@ -123,13 +117,9 @@ nav a:hover {
     z-index: 1000;
   }
 
-  .menu-toggle {
-    display: block;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 30px;
-    cursor: pointer;
+  nav ul {
+    flex-direction: column;
+    padding: 20px 0;
   }
 
   .show-menu {
@@ -140,14 +130,12 @@ nav a:hover {
 /* 🌟 HERO SECTION (Bannière) */
 .hero {
   position: relative;
-  width: 100%;
+  width: auto;
   background-size: cover;
   background-position: center;
-  overflow: hidden;
   text-align: center;
-  min-height: 80vh; /* Garantit une hauteur suffisante */
+  min-height: 90vh; /* Garantit une hauteur suffisante */
   display: flex;
-  height: 100vh;
   justify-content: center; /* Centre horizontalement */
   align-items: center; /* Centre verticalement */
 }
@@ -172,18 +160,20 @@ nav a:hover {
   z-index: 2;
   width: 80%;
   max-width: 80%; /* Limite la largeur maximale du texte */
+  margin-top: 40px;
 }
 
 .hero h1 {
-  font-size: 35px;
+  font-size: 30px;
   color: #e5fff8;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .hero p {
   font-size: 22px;
-  color: #e5fff8;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  font-style: bold;
+  /* color: #e5fff8;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); */
 }
 
 /* Animation de glissement vers le bas */
@@ -201,128 +191,18 @@ nav a:hover {
   text-align: center;
 }
 
-/* 📱 Petits écrans (Smartphones) */
-@media screen and (max-width: 600px) {
-  /* Réduction de la taille du texte */
-  .hero h1 {
-    font-size: 28px;
-  }
-  .hero p {
-    font-size: 20px;
-  }
-
-  /* Ajustement des marges et de la taille de l'image */
-  .hero img.hero-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Remplit tout en gardant le ratio */
-    position: absolute; /* Derrière le texte */
-    top: 0;
-    left: 0;
-    z-index: 1; /* Derrière le texte */
-  }
-
-  /* Réduction de la taille de la zone de texte */
-  .hero-text {
-    width: 90%;
-    padding: 10px;
-    text-align: center;
-  }
-
-  /* 🌟 TRANSPARENCE SUR LES SECTIONS */
-  .presentation,
-  .services {
-    /* background: rgba(255, 255, 255, 0.6); */
-    /* padding: 80px 10%; */
-    text-align: center;
-    border-radius: 15px; /* Ajoute un effet plus doux */
-    max-width: 90%;
-    margin: auto;
-    position: relative;
-  }
-
-  /* Centrage des images et des boutons */
-  .presentation img,
-  .services img {
-    display: block;
-    margin: 0 auto;
-    max-width: 100%;
-    height: auto;
-  }
-
-  .presentation button,
-  .services button {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    font-size: 18px;
-    border-radius: 10px;
-    background-color: #3c6c5f;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-}
-
-/* 🧾 Tablettes et écrans moyens */
-@media screen and (max-width: 1024px) {
-  /* Adaptation des colonnes */
-  .about-image {
-    grid-template-columns: 1fr; /* Une seule colonne sur tablette */
-  }
-
-  /* Ajustement de la taille du texte */
-  .hero h1 {
-    font-size: 32px;
-  }
-  .hero p {
-    font-size: 22px;
-  }
-
-  /* Ajustement des marges et des images */
-  .hero img.hero-image {
-    width: calc(100% - 30px);
-    height: calc(100% - 30px);
-    top: 15px;
-    left: 15px;
-    right: 15px;
-    border-radius: 18px;
-  }
-
-  /* Centrage des images et des boutons */
-  .presentation img,
-  .services img {
-    display: block;
-    margin: 0 auto;
-    max-width: 100%;
-    height: auto;
-  }
-
-  .presentation button,
-  .services button {
-    display: block;
-    margin: 20px auto;
-    padding: 12px 24px;
-    font-size: 20px;
-    border-radius: 12px;
-    background-color: #3c6c5f;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-}
-
 /* 🌟 SECTION PRÉSENTATION (fond clair avec séparation) */
 .presentation {
   text-align: justify;
-  padding: 40px 10%;
+  /* padding: 20px 10px 40px 10px; */
   width: 75%;
-  max-width: 2000px; /* Limite la largeur maximale */
-  margin: 0 auto; /* Centre la section horizontalement */
-  display: flex;
-  flex-direction: column;
-  font-size: 20px;
   color: #3c6c5f;
+  margin: auto;
+  font-size: 18px;
+  line-height: 1.6;
+  align-items: center;
+  margin-bottom: 60px;
+  margin-top: 40px;
 }
 
 /* Effet de glissement du haut vers le bas */
@@ -338,29 +218,27 @@ nav a:hover {
 }
 
 .presentation h2 {
-  font-size: 34px;
+  font-size: 30px;
   color: #3c6c5f;
   margin-bottom: 20px;
   text-align: center;
 }
 
 .presentation-para {
-  /* text-align: center; */
-  font-size: 20px;
+  font-size: 18px;
   color: #333;
-  /* max-width: 800px; */
   margin: 0 auto;
   line-height: 1.6;
 }
 
 /* 🌟 PRÉSENTATION AVEC IMAGE & TEXTE (Fond pastel) */
 .presentation-boxed {
-  font-size: 20px;
+  font-size: 18px;
   display: flex;
   align-items: flex-start; /* Aligner le texte en haut */
   justify-content: center;
   gap: 50px;
-  padding: 80px 10% 80px;
+  margin-bottom: 30px;
 }
 
 .presentation-img {
@@ -382,7 +260,7 @@ nav a:hover {
 
 .presentation-img img {
   width: 100%;
-  height: 500px; /* Réduit la hauteur */
+  height: 450px; /* Réduit la hauteur */
   object-fit: cover; /* Coupe l'image pour qu'elle ne soit pas déformée */
   border-radius: 15px; /* Coins arrondis */
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1); /* Ombre douce */
@@ -390,9 +268,9 @@ nav a:hover {
 
 .presentation-text {
   width: 55%;
-  font-size: 20px;
+  font-size: 18px;
   text-align: justify; /* Justifier le texte */
-  margin-top: -30px; /* Ajustez cette valeur pour remonter le texte */
+  margin-top: -30px;
   color: #3c6c5f;
 }
 
@@ -409,37 +287,59 @@ nav a:hover {
 }
 
 .presentation-text h2 {
-  font-size: 32px;
+  font-size: 30px;
   color: #3c6c5f;
-  margin-bottom: 15px;
   text-align: center;
 }
 
 .presentation-text p {
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.6;
   color: #3c6c5f;
+  margin: auto;
   margin-bottom: 15px;
+}
+
+@media screen and (max-width: 768px) {
+  .presentation-boxed {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 0px 30px;
+  }
+
+  .presentation-img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .presentation-text {
+    width: 90%;
+  }
 }
 
 /* 🌟 SERVICES (Fond coloré avec séparateur courbé) */
 .services {
   display: flex;
-  justify-content: center;
-  padding: 20px 0% 80px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 30px;
   gap: 60px;
   position: relative;
-  font-size: 20px;
+  /* font-size: 18px; */
   background-size: cover;
   border-radius: 15px;
-  margin-left: 30px;
-  margin-right: 30px;
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+  margin: 30px 20px 60px;
+  /* box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1); */
+  /* flex-direction: column;
+  align-items: center; */
 }
 
 .service-card {
   background: white;
-  padding: 30px;
   border-radius: 10px;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -454,7 +354,10 @@ nav a:hover {
   height: 100%;
   width: 100%;
 }
-
+.service-card a p {
+  font-size: 18px;
+  margin: 12px 10px;
+}
 .service-card:hover {
   transform: translateY(-5px);
   box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.5);
@@ -465,27 +368,18 @@ nav a:hover {
   text-decoration: none; /* Assure que le texte ne soit pas souligné */
 }
 
-/* 🌟 RESPONSIVE DESIGN */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
   .services {
     flex-direction: column;
     align-items: center;
   }
 
   .service-card {
-    width: 80%;
-    margin-bottom: 20px;
+    width: 90%; /* Prend toute la largeur sur mobile */
   }
 }
 
 /* 🌟 FOOTER (Fond vert foncé avec texture douce) */
-
-.footer-column {
-  flex: 1;
-  /* padding: 20px; */
-  box-sizing: border-box;
-}
-
 footer {
   display: flex;
   justify-content: space-between;
@@ -494,15 +388,19 @@ footer {
   color: white;
   flex-wrap: wrap; /* Permet aux colonnes de s'ajuster automatiquement */
   position: relative;
-  padding: 40px 20px;
-  margin-top: 50px;
+  /* margin-top: 50px; */
   border-top: 5px solid #a7dabe; /* Bordure fine et élégante */
 }
 
 .footer-left {
   flex: 1;
   text-align: center;
-  padding-left: 20px;
+}
+
+.footer-left p {
+  margin-top: -25px;
+  margin-left: 20px;
+  margin-bottom: 30px;
 }
 
 .footer-center,
@@ -530,70 +428,50 @@ footer {
 .footer p,
 .footer a {
   font-size: 1em;
-  line-height: 1.5;
+  line-height: 1.6;
   color: white;
   text-decoration: none;
-  margin-top: -14px;
 }
 
 .footer a:hover {
   text-decoration: underline;
 }
 
-/* 🌟 RESPONSIVE DESIGN */
-@media screen and (max-width: 1024px) {
-  .hero h1 {
-    font-size: 32px;
-  }
-
-  .hero p {
-    font-size: 18px;
-  }
-
-  .services {
+@media screen and (max-width: 768px) {
+  footer {
     flex-direction: column;
     align-items: center;
-  }
-
-  .service-card {
-    width: 80%;
-    margin-bottom: 20px;
-  }
-
-  .presentation-boxed {
-    flex-direction: column;
     text-align: center;
   }
 
-  .presentation-img,
-  .presentation-text {
+  .footer-left,
+  .footer-center,
+  .footer-right {
     width: 100%;
   }
-
-  .presentation-img,
-  img {
-    max-width: 80%;
-  }
 }
 
-/* Section "À propos" */
+/* Section "À propos" pour mobile et desktop */
 .about-section {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  /* justify-content: center; */
   align-items: center;
-  padding: 130px 10% 50px;
+  /* padding: 60px 10%; */
+  margin-top: 100px;
+  padding: 40px 10%;
   background: rgba(255, 255, 255, 0.8); /* Fond léger pour lisibilité */
-  border-radius: 15px;
 }
-
 /* Conteneur en 2 colonnes */
 .about-container {
   display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 60px;
+  /* gap: 30px; */
   max-width: 1200px;
   width: 100%;
-  font-size: 20px;
+  font-size: 18px;
 
   /* Animation de glissement depuis la gauche */
   .slide-left {
@@ -622,50 +500,71 @@ footer {
 
 /* Colonne Texte */
 .about-text {
-  width: 55%;
+  width: 100%;
   text-align: justify;
   color: #3c6c5f;
+  padding: 20px;
 }
 
-.about-h2 {
-  margin-top: 0;
+.about-text h2 {
+  margin-bottom: 50px;
+  font-size: 30px;
 }
 
-/* Colonne Image */
 .about-image {
-  width: 100%;
-  max-width: 450px;
-  padding-top: 10px;
+  width: 50%;
+  max-width: 350px;
+  margin-top: 30px;
+  height: auto;
 }
 
 .about-image img {
   width: 100%;
   height: auto;
-  border-radius: 15px;
+  border-radius: 25px;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-  margin-top: 50px;
-  max-height: 600px; /* ✅ Ajustez selon vos besoins */
-  object-fit: cover; /* ✅ Empêche la déformation */
+  object-fit: cover;
 }
 
-/* 🌟 Responsive (Mobile) */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
   .about-container {
     flex-direction: column;
     text-align: center;
   }
 
-  .about-text,
-  .about-image {
+  .about-text {
     width: 100%;
   }
 
-  .about-text {
-    order: 1;
+  .about-image {
+    width: 90%;
+    max-width: 350px;
+    margin: 20px auto;
   }
 
-  .about-image {
-    order: 2;
+  .about-text p:first-of-type {
+    margin-bottom: 30px;
+  }
+
+  .about-section {
+    padding-top: 20px;
+  }
+
+  .about-text p:first-of-type::after {
+    content: "";
+    display: block;
+    width: 100%;
+    background-image: url("photo_sandrine.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 30px auto;
+    max-width: 300px;
+    height: 300px;
+  }
+
+  .slide-right.visible {
+    display: none;
   }
 }
 
@@ -674,20 +573,13 @@ main {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centrer le contenu si nécessaire */
+  justify-content: center;
   max-width: 1200px;
-  margin: auto;
-  padding: 60px 10% 60px;
+  /* margin: auto; */
+  padding: 60px 10% 10px;
 }
 
-/* 🌟 RESPONSIVE DESIGN */
-@media screen and (max-width: 1024px) {
-  main {
-    padding: 40px 5%;
-  }
-}
-
-/* Conteneur principal en deux colonnes */
+/* Section Consultation Conteneur principal en deux colonnes */
 .consultations-container {
   display: flex;
   flex-wrap: wrap;
@@ -809,21 +701,6 @@ main {
 .consultations-container:nth-of-type(3) {
   animation-name: slideInLeft;
   animation-delay: 0.9s;
-}
-
-/* 📱 Responsive Design */
-@media screen and (max-width: 768px) {
-  .consultations-container {
-    flex-direction: column;
-  }
-  .consultations-container.reverse {
-    flex-direction: column;
-  }
-
-  .consultations-image img {
-    max-width: 100%;
-    margin: 20px 0;
-  }
 }
 
 /* 🌟 GENERAL STYLES */
@@ -1125,34 +1002,20 @@ textarea {
   border: none;
 } */
 
-/* Masquer le bouton burger sur écran large */
-.menu-toggle {
-  visibility: hidden; /* Rend invisible mais garde l'élément actif */
-  opacity: 0; /* Rend l'élément transparent */
-  position: absolute; /* Permet de le sortir du flux visuel */
-  top: -9999px; /* Déplace le bouton hors de la vue */
-  left: -9999px;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 30px;
-  cursor: pointer;
-  z-index: -1; /* S'assure qu'il est derrière tout */
-}
-
 /* Menu caché sur mobile */
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   .menu-toggle {
-    visibility: visible; /* Restaure la visibilité */
-    opacity: 1; /* Restaure l'opacité */
-    position: relative; /* Le remet à sa position normale */
+    visibility: visible;
+    opacity: 1;
+    position: relative;
     top: auto;
     left: auto;
-    z-index: 1001; /* Devant les autres éléments */
-    display: block; /* Affiche le bouton burger */
-  }
+    z-index: 1001; */
+/* afficher le bouton burger */
+/* display: block;
+  } */
 
-  nav {
+/* nav {
     display: none;
     flex-direction: column;
     width: 100%;
@@ -1163,9 +1026,9 @@ textarea {
     text-align: center;
     z-index: 1000;
     transition: all 0.3s ease-in-out;
-  }
+  } */
 
-  nav ul {
+/* nav ul {
     flex-direction: column;
     padding: 20px 0;
   }
@@ -1174,7 +1037,8 @@ textarea {
     margin: 10px 0;
   }
 
-  .show-menu {
-    display: flex; /* Affiche le menu quand la classe est ajoutée */
+  .show-menu { */
+/* Affiche le menu quand la classe est ajoutée */
+/* display: flex;
   }
-}
+} */
