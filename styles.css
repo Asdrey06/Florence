@@ -83,6 +83,7 @@ nav a:hover {
 .ctaButton {
   font-size: 20px;
   display: inline-block;
+
   background: #69a484;
   color: white;
   padding: 12px 25px;
@@ -95,6 +96,10 @@ nav a:hover {
   transition: all 0.3s ease-in-out;
 }
 
+.service-card:hover {
+  background: #abe4d7;
+}
+
 .ctaButton:hover {
   background: #31745a;
   transform: scale(1.1);
@@ -103,6 +108,11 @@ nav a:hover {
 @media screen and (max-width: 768px) {
   .menu-toggle {
     display: block;
+  }
+
+  .ctaButton {
+    display: flex;
+    align-items: center;
   }
 
   nav {
@@ -201,7 +211,7 @@ nav a:hover {
   font-size: 18px;
   line-height: 1.6;
   align-items: center;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
   margin-top: 40px;
 }
 
@@ -224,12 +234,12 @@ nav a:hover {
   text-align: center;
 }
 
-.presentation-para {
+/* .presentation-para {
   font-size: 18px;
   color: #333;
   margin: 0 auto;
   line-height: 1.6;
-}
+} */
 
 /* 🌟 PRÉSENTATION AVEC IMAGE & TEXTE (Fond pastel) */
 .presentation-boxed {
@@ -237,13 +247,13 @@ nav a:hover {
   display: flex;
   align-items: flex-start; /* Aligner le texte en haut */
   justify-content: center;
-  gap: 50px;
-  margin-bottom: 30px;
+  margin: 20px 10%;
 }
 
 .presentation-img {
   width: 40%; /* Largeur ajustée */
   max-width: 400px; /* Taille maximale */
+  margin-top: 10px;
 }
 
 /* Effet de glissement de la gauche vers le centre */
@@ -259,19 +269,22 @@ nav a:hover {
 }
 
 .presentation-img img {
-  width: 100%;
-  height: 450px; /* Réduit la hauteur */
+  width: 80%;
+  height: 350px; /* Réduit la hauteur */
   object-fit: cover; /* Coupe l'image pour qu'elle ne soit pas déformée */
   border-radius: 15px; /* Coins arrondis */
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1); /* Ombre douce */
 }
 
 .presentation-text {
-  width: 55%;
+  display: block !important;
+  overflow: visible !important;
+  height: auto !important;
   font-size: 18px;
-  text-align: justify; /* Justifier le texte */
-  margin-top: -30px;
+  text-align: justify;
   color: #3c6c5f;
+  width: 80%;
+  min-height: 200px; /* ✅ S'assure qu'il y a assez d'espace */
 }
 
 /* Effet de glissement de la droite vers le centre */
@@ -301,23 +314,42 @@ nav a:hover {
 }
 
 @media screen and (max-width: 768px) {
+  .presentation {
+    text-align: justify;
+    /* padding: 20px 10px 40px 10px; */
+    width: 75%;
+    color: #3c6c5f;
+    margin: auto;
+    font-size: 18px;
+    line-height: 1.6;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
   .presentation-boxed {
     flex-direction: column;
     text-align: center;
     align-items: center;
     padding: 0px 30px;
+    margin: 0;
   }
 
   .presentation-img {
-    width: auto;
-    height: auto;
-    max-width: 100%;
+    width: 60%; /* Largeur ajustée */
+    height: 90%;
+    max-width: 400px; /* Taille maximale */
     margin-bottom: 20px;
     text-align: center;
   }
 
   .presentation-text {
-    width: 90%;
+    padding-bottom: 20px; /* ✅ Ajoute de l’espace en bas pour éviter la coupe */
+  }
+
+  .presentation-text p {
+    opacity: 1 !important; /* ✅ Force l'affichage */
+    transform: none !important; /* ✅ Supprime l'animation si elle bloque */
   }
 }
 
@@ -332,7 +364,7 @@ nav a:hover {
   /* font-size: 18px; */
   background-size: cover;
   border-radius: 15px;
-  margin: 30px 20px 60px;
+  margin: 20px 20px 60px;
   /* box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1); */
   /* flex-direction: column;
   align-items: center; */
@@ -343,7 +375,7 @@ nav a:hover {
   border-radius: 10px;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
   text-align: center;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
@@ -360,7 +392,7 @@ nav a:hover {
 }
 .service-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.6);
 }
 
 .service-card a h3,
@@ -372,6 +404,7 @@ nav a:hover {
   .services {
     flex-direction: column;
     align-items: center;
+    margin: 0px 0px 20px;
   }
 
   .service-card {
@@ -447,8 +480,42 @@ footer {
   .footer-left,
   .footer-center,
   .footer-right {
-    width: 100%;
+    width: auto;
   }
+
+  .footer-left p {
+    margin-top: -25px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    line-height: 1.6;
+  }
+
+  .footer-right p {
+    line-height: 1.6;
+    margin: 0px;
+  }
+
+  .footer h3 {
+    line-height: 1.6;
+    margin: 0px;
+  }
+
+  .footer-center {
+    padding: 0px;
+    flex: 1;
+    text-align: center;
+    margin: 18px 18px 0px 18px;
+  }
+
+  .footer-right {
+    margin: 18px 18px 40px 18px;
+    padding: 0px;
+  }
+}
+
+.footer-center ul {
+  padding: 0px;
+  margin: 0px 18px 0px 18px;
 }
 
 /* Section "À propos" pour mobile et desktop */
@@ -457,10 +524,12 @@ footer {
   flex-direction: column;
   /* justify-content: center; */
   align-items: center;
+  text-align: justify;
+  text-justify: inter-word;
   /* padding: 60px 10%; */
   margin-top: 100px;
-  padding: 40px 10%;
-  background: rgba(255, 255, 255, 0.8); /* Fond léger pour lisibilité */
+  padding: 40px 80px;
+  background: rgba(255, 255, 255, 0.4);
 }
 /* Conteneur en 2 colonnes */
 .about-container {
@@ -477,7 +546,7 @@ footer {
   .slide-left {
     opacity: 0;
     transform: translateX(-50px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition: opacity 1s ease, transform 1s ease;
   }
 
   .slide-left.visible {
@@ -489,7 +558,7 @@ footer {
   .slide-right {
     opacity: 0;
     transform: translateX(50px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition: opacity 1s ease, transform 1s ease;
   }
 
   .slide-right.visible {
@@ -507,19 +576,18 @@ footer {
 }
 
 .about-text h2 {
-  margin-bottom: 50px;
+  margin: 30px;
   font-size: 30px;
 }
 
 .about-image {
   width: 50%;
   max-width: 350px;
-  margin-top: 30px;
-  height: auto;
+  border-radius: 25px;
 }
 
 .about-image img {
-  width: 100%;
+  width: 80%;
   height: auto;
   border-radius: 25px;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
@@ -532,22 +600,29 @@ footer {
     text-align: center;
   }
 
-  .about-text {
-    width: 100%;
+  .about-section {
+    /* padding: 60px 10%; */
+    margin-top: 100px;
+    padding: 0px 60px 0px;
+  }
+
+  .about-text h2 {
+    padding: 0px;
+    margin-bottom: 30px;
+    margin-top: 0px;
+  }
+
+  .about-text p {
+    margin-bottom: 40px;
+    text-align: justify;
+    text-justify: inter-word;
   }
 
   .about-image {
     width: 90%;
     max-width: 350px;
-    margin: 20px auto;
-  }
-
-  .about-text p:first-of-type {
-    margin-bottom: 30px;
-  }
-
-  .about-section {
-    padding-top: 20px;
+    border-radius: 25px;
+    height: 50px;
   }
 
   .about-text p:first-of-type::after {
@@ -555,12 +630,17 @@ footer {
     display: block;
     width: 100%;
     background-image: url("photo_sandrine.jpg");
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    text-align: justify;
+    text-justify: inter-word;
     margin: 30px auto;
-    max-width: 300px;
+    max-width: 250px;
     height: 300px;
+    /* ✅ Arrondi fonctionnel avec clip-path */
+    clip-path: inset(0% round 20px);
+    overflow: hidden;
   }
 
   .slide-right.visible {
@@ -586,9 +666,10 @@ main {
   align-items: flex-start; /* Aligner le texte et les images en haut */
   justify-content: space-between;
   gap: 50px; /* Espacement entre les colonnes */
-  padding: 60px 10%;
+  /* padding: 60px 10% 5%; */
+  padding: 40px;
   max-width: 1200px;
-  margin: 60px auto 40px; /* Centrer avec une marge supérieure */
+  margin: 60px auto 0px; /* Centrer avec une marge supérieure */
   /* background: transparent; Supprime le fond blanc */
   background: rgba(255, 255, 255, 0.6);
   border-radius: 20px;
@@ -603,9 +684,10 @@ main {
 /* Colonne Texte */
 .consultations-text {
   flex: 1;
-  font-size: 20px;
+  font-size: 18px;
   color: #333;
   text-align: justify;
+  text-justify: inter-word;
   display: flex;
   flex-direction: column;
   /* gap: 30px; */
@@ -631,6 +713,7 @@ main {
 .consultations-image img {
   width: 100%;
   max-width: 500px;
+  max-height: 450px;
   height: auto;
   border-radius: 20px;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
@@ -645,12 +728,12 @@ main {
 .smaller-image {
   width: 60%; /* Réduit uniquement les images ciblées */
   max-width: 300px;
-  max-height: 500px;
+  max-height: 300px;
   margin-top: 20px;
 }
 
 .replace-image {
-  margin-top: 50px;
+  /* margin-top: 50px; */
   height: auto;
   max-height: 500px;
   object-fit: cover;
@@ -703,6 +786,53 @@ main {
   animation-delay: 0.9s;
 }
 
+/* Responsive Design - Adaptation pour Mobile */
+@media (max-width: 768px) {
+  .consultations-container {
+    flex-direction: column; /* Passe en mode colonne sur mobile */
+    gap: 10px;
+    /* padding: 40px 5%; */
+    /* margin: 60px auto 0px; */
+    /* padding: auto; */
+    /* padding-top: 60px; */
+  }
+
+  .consultations-text {
+    font-size: 18px;
+    text-align: justify;
+    text-justify: inter-word;
+  }
+
+  /* .consultations-text h1 {
+    margin-top: 60px;
+  } */
+
+  .consultations-image {
+    justify-content: center;
+  }
+
+  .smaller-image {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .replace-image {
+    margin-bottom: 20px;
+  }
+
+  .consultations-image img {
+    width: 90%;
+    max-width: 300px;
+    height: 50%;
+    max-height: 300px;
+  }
+
+  /* Annule l'inversion des colonnes sur mobile */
+  .consultations-container.reverse {
+    flex-direction: column;
+  }
+}
+
 /* 🌟 GENERAL STYLES */
 body {
   background-image: url("fond_ecran_canva.png");
@@ -743,7 +873,7 @@ h2 {
 }
 
 .contact-subtext {
-  font-size: 20px;
+  font-size: 18px;
   margin-bottom: 60px;
   color: #3c6c5f;
 }
@@ -859,186 +989,67 @@ textarea {
   overflow: hidden;
 }
 
-/* 🌟 CONTACT PAGE STYLES */
-/* .contact-section { */
-/* background: rgba(255, 255, 255, 0.8); */
-/* padding: 50px; */
-/* border-radius: 15px;
-  box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.3);
-  text-align: center;
-  padding-top: 50px; */
-/* margin-top: 150px;
-} */
+/* 🌍 📱 Responsive Design - Version mobile */
+@media (max-width: 768px) {
+  .contact-page {
+    padding-top: 150px;
+    margin: 20px auto;
+  }
 
-/* p {
-  font-size: 18px;
-  line-height: 1.6;
-} */
+  .contact-title {
+    font-size: 28px;
+  }
 
-/* 🌟 FORMULAIRE DE CONTACT */
-/* .contact-form {
-  background: rgb(156, 206, 174, 0.32);
-  padding: 30px;
-  border-radius: 15px;
-  color: rgb(76, 73, 73);
-  margin-bottom: 30px;
-  width: 75%;
-  display: flex;
-  flex-direction: column;
-  text-align: start;
-  align-items: stretch;  */
-/* Pour centrer horizontalement */
-/* margin-left: auto;
-  margin-right: auto; */
-/* box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1); */
-/* } */
+  .contact-subtext {
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
 
-/* .section-shadow { */
-/* Taille normale avant survol */
-/* width: 90%;  */
-/* Largeur maximale standard */
-/* max-width: 2000px;  */
-/* transition: all 0.3s ease; */
-/* border-radius: 15px;
-  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.15); */
-/* Centre la section horizontalement */
-/* margin: auto;  */
-/* } */
-
-/* .section-shadow:hover { */
-/* width: 100%; */
-/* Assure une largeur maximale élargie */
-/* max-width: 4000px;
-  box-shadow: 0px 15px 45px rgba(0, 0, 0, 0.3);
-  transform: translateY(-5px);
-  display: flex;
-  flex-direction: column;
-  border-radius: 15px; */
-/* Centre les éléments horizontalement */
-/* align-items: center;  */
-/* Centre les éléments verticalement */
-/* justify-content: center;  */
-/* text-align: center; Assure que le texte est centré */
-/* } */
-
-/* .contact-form input,
-.contact-form textarea {
-  width: calc(100% - 40px);
-  padding: 25px;
-  margin: 10px 20px;
-  border-radius: 5px;
-  border: 1px solid #ccc; */
-/* Pour inclure le padding dans la largeur totale */
-/* box-sizing: border-box; 
-} */
-
-/* .form-label {
-  padding: 10px;
-  padding-top: 10px;
-}
-
-.contact-form button {
-  background: #599474;
-  color: white;
-  padding: 12px 25px;
-  border-radius: 30px;
-  border: none; */
-/* margin-top: 20px; */
-/* font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-} */
-
-/* .contact-form button:hover {
-  background: #31745a;
-  transform: scale(1.05);
-} */
-
-/* 🌟 CONTACT INFO STYLES */
-/* .contact-details,
-.cabinet-address,
-.opening-hours,
-.consultation-fees,
-.additional-info { */
-/* background: rgba(255, 255, 255, 0.9); */
-/* padding: 20px; */
-/* text-align: center; */
-/* width: 75%;
-  display: flex;
-  flex-direction: column;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 15px;
-  margin-bottom: 20px;
-  background: rgb(156, 206, 174, 0.32);
-} */
-
-/* ul {
-  list-style-type: none;
-  padding: 0;
-} */
-
-/* ul li {
-  margin: 5px 0;
-} */
-
-/* 🌟 GOOGLE MAP */
-/* .map-container {
-  width: 90%;
-  height: 400px;
-  border-radius: 15px;
-  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
-  margin: 20px auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
-
-/* .map-container iframe {
-  width: 100%;
-  height: 100%;
-  border-radius: 15px;
-  border: none;
-} */
-
-/* Menu caché sur mobile */
-/* @media screen and (max-width: 768px) {
-  .menu-toggle {
-    visibility: visible;
-    opacity: 1;
-    position: relative;
-    top: auto;
-    left: auto;
-    z-index: 1001; */
-/* afficher le bouton burger */
-/* display: block;
-  } */
-
-/* nav {
-    display: none;
+  .contact-content {
     flex-direction: column;
-    width: 100%;
-    background: rgba(84, 156, 117, 0.9);
-    position: absolute;
-    top: 80px;
-    left: 0;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .contact-section {
+    flex-direction: column; /* ✅ Passage en colonne sur mobile */
+    align-items: center;
     text-align: center;
-    z-index: 1000;
-    transition: all 0.3s ease-in-out;
-  } */
-
-/* nav ul {
-    flex-direction: column;
-    padding: 20px 0;
   }
 
-  nav ul li {
-    margin: 10px 0;
+  .contact-info {
+    text-align: center; /* ✅ Centrage du texte */
+    font-size: 16px;
   }
 
-  .show-menu { */
-/* Affiche le menu quand la classe est ajoutée */
-/* display: flex;
+  .info-block {
+    padding: 15px;
+    font-size: 16px;
   }
-} */
+
+  .contact-form {
+    width: 90%;
+    max-width: 400px; /* ✅ Ajuste la largeur pour les petits écrans */
+    padding-bottom: 40px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .contact-form button {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .map-section {
+    margin-top: 40px;
+  }
+
+  .map-container {
+    width: 100%;
+    height: 250px; /* ✅ Taille réduite pour mobile */
+  }
+}
