@@ -110,6 +110,11 @@ nav a:hover {
     display: block;
   }
 
+  .header {
+    height: 130px;
+    padding: 0px 40px;
+  }
+
   .ctaButton {
     display: flex;
     align-items: center;
@@ -134,6 +139,12 @@ nav a:hover {
 
   .show-menu {
     display: flex;
+  }
+
+  .logo img {
+    height: 130px;
+    max-width: 180px;
+    display: block;
   }
 }
 
@@ -317,13 +328,13 @@ nav a:hover {
   .presentation {
     text-align: justify;
     /* padding: 20px 10px 40px 10px; */
-    width: 75%;
+    width: 80%;
     color: #3c6c5f;
     margin: auto;
     font-size: 18px;
     line-height: 1.6;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     margin-top: 20px;
   }
 
@@ -337,10 +348,14 @@ nav a:hover {
 
   .presentation-img {
     width: 60%; /* Largeur ajustée */
-    height: 90%;
+    /* height: 90%; */
     max-width: 400px; /* Taille maximale */
     margin-bottom: 20px;
     text-align: center;
+  }
+
+  .presentation-img img {
+    height: 300px;
   }
 
   .presentation-text {
@@ -404,7 +419,8 @@ nav a:hover {
   .services {
     flex-direction: column;
     align-items: center;
-    margin: 0px 0px 20px;
+    /* margin: 0px 0px 20px; */
+    padding: 0;
   }
 
   .service-card {
@@ -485,7 +501,8 @@ footer {
 
   .footer-left p {
     margin-top: -25px;
-    margin-left: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
     margin-bottom: 10px;
     line-height: 1.6;
   }
@@ -498,6 +515,7 @@ footer {
   .footer h3 {
     line-height: 1.6;
     margin: 0px;
+    padding-top: 10px;
   }
 
   .footer-center {
@@ -508,7 +526,8 @@ footer {
   }
 
   .footer-right {
-    margin: 18px 18px 40px 18px;
+    margin-top: 18px;
+    margin-bottom: 40px;
     padding: 0px;
   }
 }
@@ -604,6 +623,7 @@ footer {
     /* padding: 60px 10%; */
     margin-top: 100px;
     padding: 0px 60px 0px;
+    width: 80%;
   }
 
   .about-text h2 {
@@ -622,13 +642,12 @@ footer {
     width: 90%;
     max-width: 350px;
     border-radius: 25px;
-    height: 50px;
   }
 
   .about-text p:first-of-type::after {
     content: "";
     display: block;
-    width: 100%;
+    width: 200px;
     background-image: url("photo_sandrine.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -637,7 +656,7 @@ footer {
     text-justify: inter-word;
     margin: 30px auto;
     max-width: 250px;
-    height: 300px;
+    height: 280px;
     /* ✅ Arrondi fonctionnel avec clip-path */
     clip-path: inset(0% round 20px);
     overflow: hidden;
@@ -676,7 +695,7 @@ main {
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
   align-items: stretch; /* Assure que l'image et le texte occupent toute la hauteur disponible */
   opacity: 0; /* Commence invisible */
-  animation-duration: 2s;
+  animation-duration: 1.6s;
   animation-fill-mode: forwards; /* Garde l'état final de l'animation */
   animation-timing-function: ease-out;
 }
@@ -752,6 +771,7 @@ main {
     transform: translateX(-100%);
     opacity: 0;
   }
+
   100% {
     transform: translateX(0);
     opacity: 1;
@@ -773,17 +793,19 @@ main {
 /* Appliquer l'animation à chaque section */
 .consultations-container:nth-of-type(1) {
   animation-name: slideInLeft;
-  animation-delay: 0.3s; /* Légère attente avant de commencer */
+  /* Légère attente avant de commencer */
+  animation-delay: 0.8s;
 }
 
 .consultations-container:nth-of-type(2) {
   animation-name: slideInRight;
-  animation-delay: 0.6s; /* Début différé pour l'effet en cascade */
+  /* Début différé pour l'effet en cascade */
+  animation-delay: 1s;
 }
 
 .consultations-container:nth-of-type(3) {
   animation-name: slideInLeft;
-  animation-delay: 0.9s;
+  animation-delay: 1.2s;
 }
 
 /* Responsive Design - Adaptation pour Mobile */
@@ -993,7 +1015,7 @@ textarea {
 @media (max-width: 768px) {
   .contact-page {
     padding-top: 150px;
-    margin: 20px auto;
+    /* margin: auto auto; */
   }
 
   .contact-title {
@@ -1008,7 +1030,7 @@ textarea {
   .contact-content {
     flex-direction: column;
     gap: 20px;
-    align-items: center;
+    align-items: stretch;
   }
 
   .contact-section {
@@ -1020,15 +1042,18 @@ textarea {
   .contact-info {
     text-align: center; /* ✅ Centrage du texte */
     font-size: 16px;
+    /* padding: 0;
   }
 
   .info-block {
-    padding: 15px;
+    /* padding: 15px; */
     font-size: 16px;
+    width: 100%;
+    padding-top: 20px;
   }
 
   .contact-form {
-    width: 90%;
+    width: 100%;
     max-width: 400px; /* ✅ Ajuste la largeur pour les petits écrans */
     padding-bottom: 40px;
   }
@@ -1036,7 +1061,7 @@ textarea {
   .contact-form input,
   .contact-form textarea {
     font-size: 14px;
-    padding: 10px;
+    /* padding: 10px; */
   }
 
   .contact-form button {
