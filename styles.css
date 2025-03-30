@@ -94,6 +94,7 @@ nav a:hover {
   margin: 20px auto;
   width: fit-content;
   transition: all 0.3s ease-in-out;
+  align-items: center;
 }
 
 .service-card:hover {
@@ -317,6 +318,7 @@ nav a:hover {
   font-size: 30px;
   color: #3c6c5f;
   text-align: center;
+  margin-top: 0;
 }
 
 .presentation-text p {
@@ -361,6 +363,7 @@ nav a:hover {
   .presentation-img img {
     height: 250px;
     width: 80%;
+    margin-top: 0;
   }
 
   .presentation-text {
@@ -598,7 +601,8 @@ footer {
   width: 100%;
   text-align: justify;
   color: #3c6c5f;
-  /* padding-left: 20px; */
+  padding-left: 20px;
+  line-height: 1.6;
 }
 
 .about-text h2 {
@@ -638,16 +642,18 @@ footer {
   .about-text h2 {
     padding: 0px;
     margin-bottom: 30px;
-    margin-top: 0px;
+    margin-top: 20px;
+    margin-right: 60px;
   }
 
   .about-text p {
     /* margin-bottom: 40px; */
     text-align: justify;
     text-justify: inter-word;
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: 40px;
+    padding-left: 5px;
     margin: 0;
+    margin-bottom: 16px;
   }
 
   .about-image {
@@ -710,7 +716,7 @@ main {
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
   align-items: stretch; /* Assure que l'image et le texte occupent toute la hauteur disponible */
   opacity: 0; /* Commence invisible */
-  animation-duration: 1.6s;
+  animation-duration: 2.3s;
   animation-fill-mode: forwards; /* Garde l'état final de l'animation */
   animation-timing-function: ease-out;
 }
@@ -724,6 +730,7 @@ main {
   text-justify: inter-word;
   display: flex;
   flex-direction: column;
+  line-height: 1.6;
   /* gap: 30px; */
 }
 
@@ -832,7 +839,7 @@ main {
     /* padding: 40px 5%; */
     /* margin: 60px auto 0px; */
     /* padding: auto; */
-    /* padding-top: 60px; */
+    padding-top: 10px;
   }
 
   .consultations-text {
@@ -841,9 +848,10 @@ main {
     text-justify: inter-word;
   }
 
-  /* .consultations-text h1 {
-    margin-top: 60px;
-  } */
+  .consultations-text h2 {
+    padding-left: 0;
+    padding-right: 0;
+  }
 
   .consultations-image {
     justify-content: center;
@@ -856,6 +864,7 @@ main {
 
   .replace-image {
     margin-bottom: 20px;
+    margin-top: 20px;
   }
 
   .consultations-image img {
@@ -914,6 +923,7 @@ h2 {
   font-size: 18px;
   margin-bottom: 60px;
   color: #3c6c5f;
+  line-height: 1.6;
 }
 
 /* 📌 Section principale */
@@ -1033,8 +1043,7 @@ textarea {
 /* 🌍 📱 Responsive Design - Version mobile */
 @media (max-width: 768px) {
   .contact-page {
-    padding-top: 150px;
-    /* margin: auto auto; */
+    margin-top: 0px;
   }
 
   .contact-title {
@@ -1043,7 +1052,7 @@ textarea {
 
   .contact-subtext {
     font-size: 16px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
 
   .contact-content {
