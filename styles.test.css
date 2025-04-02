@@ -11,7 +11,7 @@ body {
   padding: 0;
   color: rgb(36, 61, 61);
   width: 100%;
-  overflow-y: auto; /* ou simplement la supprimer */
+  overflow-x: hidden;
   max-width: 100%;
   height: auto;
   display: flex;
@@ -83,6 +83,7 @@ nav a:hover {
 .ctaButton {
   font-size: 18px;
   display: inline-block;
+
   background: #69a484;
   color: white;
   padding: 12px 25px;
@@ -110,8 +111,8 @@ nav a:hover {
     display: block;
   }
 
-  header {
-    height: 100px;
+  .header {
+    height: 130px;
     padding: 0px 40px;
   }
 
@@ -142,7 +143,7 @@ nav a:hover {
   }
 
   .logo img {
-    height: 90px;
+    height: 130px;
     max-width: 130px;
     display: block;
   }
@@ -155,7 +156,7 @@ nav a:hover {
   background-size: cover;
   background-position: center;
   text-align: center;
-  min-height: 80vh; /* Garantit une hauteur suffisante */
+  min-height: 90vh; /* Garantit une hauteur suffisante */
   display: flex;
   justify-content: center; /* Centre horizontalement */
   align-items: center; /* Centre verticalement */
@@ -198,18 +199,6 @@ nav a:hover {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); */
 }
 
-.intro {
-  margin-top: 50px;
-  text-align: justify;
-  /* padding: 20px 10px 40px 10px; */
-  width: 100%;
-  color: #3c6c5f;
-  font-size: 18px;
-  line-height: 1.6;
-  align-items: center;
-  hyphens: auto;
-}
-
 /* Animation de glissement vers le bas */
 .slide-down {
   opacity: 0;
@@ -225,39 +214,6 @@ nav a:hover {
   text-align: center;
 }
 
-@media screen and (max-width: 768px) {
-  .hero img.hero-image {
-    height: 60%;
-    width: 100%;
-  }
-
-  .hero {
-    margin-top: 250px;
-    min-height: 0;
-  }
-
-  .hero-text {
-    margin: 0;
-    padding: 0;
-  }
-
-  .intro {
-    margin-top: 100px;
-    text-align: justify;
-    /* padding: 20px 10px 40px 10px; */
-    width: 100%;
-    color: #3c6c5f;
-    font-size: 18px;
-    line-height: 1.6;
-    align-items: center;
-    hyphens: auto;
-  }
-
-  .intro h2 {
-    width: fit-content;
-  }
-}
-
 /* 🌟 SECTION PRÉSENTATION (fond clair avec séparation) */
 .presentation {
   text-align: justify;
@@ -269,7 +225,7 @@ nav a:hover {
   line-height: 1.6;
   align-items: center;
   margin-bottom: 20px;
-  margin-top: 80px;
+  margin-top: 40px;
 }
 
 /* Effet de glissement du haut vers le bas */
@@ -307,19 +263,11 @@ nav a:hover {
   margin: 20px 10%;
 }
 
-.presentation-text {
-  margin-bottom: 0;
-}
-
-.presentation-p {
-  padding-bottom: 20px;
-}
-
 .presentation-img {
   width: 40%; /* Largeur ajustée */
   max-width: 400px; /* Taille maximale */
-  margin-top: 50px;
-  margin-right: -50px;
+  margin-top: 10px;
+  margin-right: -100px;
 }
 
 /* Effet de glissement de la gauche vers le centre */
@@ -385,21 +333,21 @@ nav a:hover {
   .presentation {
     text-align: justify;
     /* padding: 20px 10px 40px 10px; */
-    width: 100%;
+    width: 80%;
     color: #3c6c5f;
     margin: auto;
     font-size: 18px;
     line-height: 1.6;
     align-items: center;
-    margin-top: 60px;
-    hyphens: auto;
+    margin-bottom: 10px;
+    margin-top: 20px;
   }
 
   .presentation-boxed {
     flex-direction: column;
     text-align: center;
     align-items: center;
-    /* padding: 0px 30px; */
+    padding: 0px 30px;
     margin: 0;
   }
 
@@ -408,25 +356,23 @@ nav a:hover {
     /* height: 90%; */
     max-width: 400px; /* Taille maximale */
     margin-bottom: 20px;
-    margin-top: 0;
     text-align: center;
     margin-right: 0;
   }
 
   .presentation-img img {
-    height: 200px;
-    width: 100%;
+    height: 250px;
+    width: 80%;
     margin-top: 0;
+  }
+
+  .presentation-text {
+    padding-bottom: 20px; /* ✅ Ajoute de l’espace en bas pour éviter la coupe */
   }
 
   .presentation-text p {
     opacity: 1 !important; /* ✅ Force l'affichage */
     transform: none !important; /* ✅ Supprime l'animation si elle bloque */
-    width: 100%;
-  }
-
-  .presentation-text {
-    width: 100%;
   }
 }
 
@@ -621,7 +567,7 @@ footer {
   align-items: center;
   gap: 60px;
   /* gap: 30px; */
-  /* max-width: 1200px; */
+  max-width: 1200px;
   width: 100%;
   font-size: 18px;
 }
@@ -672,6 +618,7 @@ footer {
 
 .about-image img {
   width: 80%;
+  height: 300px;
   border-radius: 25px;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
   object-fit: cover;
@@ -696,23 +643,17 @@ footer {
     padding: 0px;
     margin-bottom: 30px;
     margin-top: 20px;
-    margin-right: 0;
-    margin-left: 0;
+    margin-right: 60px;
   }
 
   .about-text p {
     /* margin-bottom: 40px; */
     text-align: justify;
     text-justify: inter-word;
-    hyphens: auto;
+    padding-right: 40px;
+    padding-left: 5px;
     margin: 0;
     margin-bottom: 16px;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  .about-text {
-    padding-left: 0;
   }
 
   .about-image {
@@ -731,9 +672,8 @@ footer {
     background-position: center;
     text-align: justify;
     text-justify: inter-word;
-    hyphens: auto;
     margin: 30px auto;
-    /* max-width: 250px; */
+    max-width: 250px;
     height: 280px;
     /* ✅ Arrondi fonctionnel avec clip-path */
     clip-path: inset(0% round 20px);
@@ -753,13 +693,7 @@ main {
   justify-content: center;
   max-width: 1200px;
   /* margin: auto; */
-  padding: 20px 10% 10px;
-}
-
-@media screen and (max-width: 768px) {
-  main {
-    padding: 20px 20px 10px;
-  }
+  padding: 60px 10% 10px;
 }
 
 /* Section Consultation Conteneur principal en deux colonnes */
@@ -775,7 +709,7 @@ main {
   padding-right: 20px;
   padding-left: 20px;
   max-width: 1200px;
-  margin: 60px 40px 0px; /* Centrer avec une marge supérieure */
+  margin: 60px auto 0px; /* Centrer avec une marge supérieure */
   /* background: transparent; Supprime le fond blanc */
   background: rgba(255, 255, 255, 0.6);
   border-radius: 20px;
@@ -903,19 +837,15 @@ main {
     flex-direction: column; /* Passe en mode colonne sur mobile */
     gap: 10px;
     /* padding: 40px 5%; */
-    margin-left: 0;
-    margin-right: 0;
+    /* margin: 60px auto 0px; */
     /* padding: auto; */
     padding-top: 10px;
-    padding-right: 10px;
-    padding-left: 10px;
   }
 
   .consultations-text {
     font-size: 18px;
     text-align: justify;
     text-justify: inter-word;
-    hyphens: auto;
   }
 
   .consultations-text h2 {
@@ -976,7 +906,7 @@ body {
 
 /* 🏷️ Titre principal */
 .contact-title {
-  font-size: 24px;
+  font-size: 28px;
   text-transform: uppercase;
   margin-bottom: 10px;
   color: #3c6c5f;
@@ -1117,8 +1047,7 @@ textarea {
   }
 
   .contact-title {
-    font-size: 26px;
-    padding-top: 20px;
+    font-size: 28px;
   }
 
   .contact-subtext {
@@ -1170,10 +1099,6 @@ textarea {
 
   .map-section {
     margin-top: 40px;
-  }
-
-  .map-section h2 {
-    font-size: 26px;
   }
 
   .map-container {
